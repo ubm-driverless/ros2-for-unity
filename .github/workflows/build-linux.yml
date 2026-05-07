@@ -41,15 +41,15 @@ jobs:
       - name: Pull repositories
         shell: bash
         run: |
-          set -eux
           source /opt/ros/jazzy/setup.bash
+          set -ex
           ./pull_repositories.sh
 
       - name: Build standalone
         shell: bash
         run: |
-          set -eux
           source /opt/ros/jazzy/setup.bash
+          set -ex
           ./build.sh --standalone
 
       - name: Inspect build output
