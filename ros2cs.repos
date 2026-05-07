@@ -1,5 +1,5 @@
 repositories:
   src/ros2cs/:
     type: git
-    url:     https://github.com/RobotecAI/ros2cs.git
-    version: feature/jazzy-support
+    url: https://github.com/ubm-driverless/ros2cs.git
+    version: ubm/jazzy
