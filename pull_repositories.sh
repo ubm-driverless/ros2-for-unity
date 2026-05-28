@@ -23,3 +23,8 @@ echo "Pulling ros2cs dependencies:"
 cd "$SCRIPTPATH/src/ros2cs"
 ./get_repos.sh
 cd -
+
+echo ""
+echo "========================================="
+echo "Importing UBM custom message packages:"
+"$SCRIPTPATH/import_ubm_custom_messages.sh"

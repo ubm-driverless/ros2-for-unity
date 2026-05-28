@@ -64,6 +64,21 @@ jobs:
           echo "=== Plugins tree (top 50) ==="
           find install/asset/Ros2ForUnity/Plugins -maxdepth 4 -type f 2>/dev/null | head -50 || true
 
+      - name: Verify custom message assemblies
+        shell: bash
+        run: |
+          set -eux
+          for assembly in \
+            ackermann_msgs_assembly.dll \
+            asu_diagnostic_msgs_assembly.dll \
+            camera_msgs_assembly.dll \
+            fsae_msgs_assembly.dll \
+            landmark_msgs_assembly.dll \
+            vcu_msgs_assembly.dll
+          do
+            test -f "install/asset/Ros2ForUnity/Plugins/${assembly}"
+          done
+
       - name: Upload Ros2ForUnity artifact
         if: success()
         uses: actions/upload-artifact@v4

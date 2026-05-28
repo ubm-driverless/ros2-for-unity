@@ -65,6 +65,11 @@ Custom messages can be included in the build by either:
 * listing them in `ros2_for_unity_custom_messages.repos` file, or
 * manually inserting them in `src/ros2cs` directory. If the folder doesn't exist, you must pull repositories first (see building steps for each OS).
 
+The `ubm/jazzy` branch also imports the UBM interface packages from
+[`ubm-driverless/ubm-fsae`](https://github.com/ubm-driverless/ubm-fsae) during
+`pull_repositories.sh`. Override `UBM_FSAE_REPO_URL`, `UBM_FSAE_REPO_REF`, or
+`UBM_FSAE_REPO_PATH` if you need to build against a different checkout.
+
 ## Installation
 
 1. Perform building steps described in the OS-specific readme or download pre-built Unity package. Do not source `ros2-for-unity` nor `ros2cs` project into ROS2 workspace.
