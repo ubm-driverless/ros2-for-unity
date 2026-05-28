@@ -20,13 +20,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Checkout UBM FSAE messages source
-        uses: actions/checkout@v4
-        with:
-          repository: ubm-driverless/ubm-fsae
-          ref: main
-          path: src/ubm-fsae-message-source
-
       - name: Install build deps
         shell: bash
         run: |
@@ -49,8 +42,6 @@ jobs:
 
       - name: Pull repositories
         shell: bash
-        env:
-          UBM_FSAE_REPO_PATH: ${{ github.workspace }}/src/ubm-fsae-message-source
         run: |
           source /opt/ros/jazzy/setup.bash
           set -ex

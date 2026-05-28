@@ -9,6 +9,7 @@ UBM_FSAE_REPO_REF="${UBM_FSAE_REPO_REF:-main}"
 UBM_FSAE_REPO_PATH="${UBM_FSAE_REPO_PATH:-}"
 
 SOURCE_DIR="$SCRIPTPATH/src/ubm-fsae-message-source"
+VENDORED_SOURCE_DIR="$SCRIPTPATH/custom_messages/ubm-fsae"
 DEST_DIR="$SCRIPTPATH/src/ros2cs/src/custom_messages"
 
 MESSAGE_PACKAGES=(
@@ -23,6 +24,8 @@ mkdir -p "$DEST_DIR"
 
 if [ -n "$UBM_FSAE_REPO_PATH" ]; then
   SOURCE_DIR="$UBM_FSAE_REPO_PATH"
+elif [ -d "$VENDORED_SOURCE_DIR" ]; then
+  SOURCE_DIR="$VENDORED_SOURCE_DIR"
 else
   rm -rf "$SOURCE_DIR"
   git clone --depth 1 --branch "$UBM_FSAE_REPO_REF" "$UBM_FSAE_REPO_URL" "$SOURCE_DIR"

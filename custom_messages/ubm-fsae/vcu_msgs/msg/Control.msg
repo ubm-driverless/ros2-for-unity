@@ -1,0 +1,12 @@
+std_msgs/Header header
+
+float32 torque_fl_target_nm
+float32 torque_fr_target_nm
+float32 torque_rl_target_nm
+float32 torque_rr_target_nm
+
+float32 speed_target_mps
+float32 brake_target_bar
+float32 steer_target_deg
+
+uint8 lap_counter
